@@ -1,0 +1,326 @@
+@font-face {
+    font-family: pokemon;
+    src: url('../fonts/pokemon.ttf');
+}
+
+@font-face {
+    font-family: pokemon-title;
+    src: url('../fonts/Pokemon-solid.ttf');
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: pokemon;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+a,
+button {
+    font-size: 1.2rem;
+}
+
+.icon {
+    height: 30px;
+    width: 30px;
+}
+
+.tshadow {
+    text-shadow: 3px 1px 2px rgba(0, 0, 0, 0.938);
+}
+
+.main_wrapper {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background: url('../background/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.initial_screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    margin-inline: auto;
+    padding: 3rem 0;
+}
+
+.float_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 0.2rem;
+    font-size: 0.8rem;
+    height: 45px;
+    width: 45px;
+    z-index: 2;
+    margin-bottom: 1rem;
+}
+
+.mute::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background-color: #ff0000d3;
+    transform: rotate(45deg);
+}
+
+.main_title {
+    font-size: clamp(3rem, 5vw, 4rem);
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem; 
+    color: white;
+}
+
+.main_title-small {
+    font-size: 2.5rem;
+}
+
+.box_modal {
+    max-width: 400px;
+    width: 100%;
+    margin-inline: auto;
+    padding: 1.5rem;
+    background-color: #fafafa;
+    border: 5px solid #706880;
+    box-shadow: inset 1px 1px 3px #00000080;
+    border-radius: 0.2rem;
+}
+
+.box_modal  a, button {
+    text-transform: uppercase;
+} 
+
+.dificulty_wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.game_screen {
+    margin-inline: auto;
+    padding: 3rem 0;
+}
+
+.game_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.cards_wrapper {
+    max-width: 1360px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-inline: auto;
+    gap: 0.8rem;
+    padding: 0 0.5rem;
+}
+
+.card_container {
+    text-transform: capitalize;
+    width: 180px;
+    height: 200px;
+    perspective: 1000px;
+    perspective-origin: center center;
+}   
+
+.card {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    width: 100%;
+    height: 100%;
+    background-color: #0000005e;
+    border-radius: 0.3rem;
+    box-shadow: 2px 1px 3px #00000045;
+    transition: transform 0.5s linear;
+    animation: showCard 0.9s ease-in-out;
+}
+
+.card_name {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: white;
+    word-break: break-all;
+}
+
+.card_img {
+    object-fit: cover;
+    vertical-align: middle;
+    width: 100%;
+    height: 150px;
+}
+
+.modal_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000069;
+    z-index: 1;
+}
+
+.modal_title {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.modal_text {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.modal_btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.high_score {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+
+.btn-hover:hover::after {
+    content: '>';
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.selected::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    background-color: #888;
+    animation: blink 0.9s linear infinite;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: #fafafa;
+    font-size: 2rem;
+}
+
+.bg_load {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #be6d2b;
+}
+
+.shiny {
+    position: relative;
+    border: 1px solid gold;
+    box-shadow: 2px 2px 5px #ffd90066;
+}
+
+.shiny::after {
+    content: '';
+    position: absolute;
+    background-image: url('../icons/star_icon.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    bottom: 7px;
+    left: 5px;
+}
+
+@keyframes showUp {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    0%, 40% {
+        opacity: 0.7;
+    }
+    41% {
+        opacity: 0.5;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes showCard {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animation-showUp {
+    animation: showUp 1s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.pointer-events_none {
+    pointer-events: none;
+}
