@@ -68,6 +68,7 @@ function MainScreen() {
     setIsGameStart(false);
     setIsGameOver(false);
     setGameoverStatus('');
+    setPokemonAmount(Config[dificulty].amount);
   }
 
   function gameover(gameoverStatus) {
