@@ -44,6 +44,7 @@ function MainScreen() {
   const init = async (amount) => {
     Player.stopAll();
     Player.playSoundEffect(Sounds.select);
+    setIsGameStart(true);
     setScore(0);
     setIsLoading(true);
 
@@ -53,7 +54,6 @@ function MainScreen() {
       randomPokemons.map((pokemon) => ({ ...pokemon, isCliked: false }))
     );
 
-    setIsGameStart(true);
     stopIntroMusic();
 
     await deley(1000);
