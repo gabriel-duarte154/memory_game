@@ -30,7 +30,10 @@ function GameMenu({ dificulty, setDificulty, startGame }) {
         </button>
       </div>
       <div>
-        <a href="#" className="btn-hover">
+        <a
+          href="https://github.com/gabriel-duarte154/memory_game"
+          className="btn-hover"
+        >
           Git Hub
         </a>
       </div>
