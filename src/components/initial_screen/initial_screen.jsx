@@ -30,12 +30,14 @@ function GameMenu({ dificulty, setDificulty, startGame }) {
         </button>
       </div>
       <div>
-        <a
-          href="https://github.com/gabriel-duarte154/memory_game"
+        <button
           className="btn-hover"
+          onClick={() => {
+            window.open('https://github.com/gabriel-duarte154/memory_game');
+          }}
         >
           Git Hub
-        </a>
+        </button>
       </div>
     </div>
   );
