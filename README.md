@@ -1,3 +1,10 @@
 # Memory Game
 
-A memory game build with React and CSS.
+A memory game based on the Pokemon game.
+
+Build with React and Vite.
+
+Gols: 
+ - Improve general skills in React
+ - Use Hooks
+ - Dynamic UI
