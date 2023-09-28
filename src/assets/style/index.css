@@ -3,11 +3,6 @@
     src: url('../fonts/pokemon.ttf');
 }
 
-@font-face {
-    font-family: pokemon-title;
-    src: url('../fonts/Pokemon-solid.ttf');
-}
-
 *, *::after, *::before {
     margin: 0;
     padding: 0;
